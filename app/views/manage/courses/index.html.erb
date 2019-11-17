@@ -1,7 +1,13 @@
-<h1>Courses</h1>
+<div class="row">
+  <div class="col-md-6">
+    <h1 class="pull-left">Courses</h1>
+  </div>
+  <div class="col-md-6">
+    <%= link_to "New Course", new_manage_course_path, class: 'btn btn-success pull-right' %>
+  </div>
+</div>
 
-<%= link_to "New Course", new_manage_course_path, class: 'btn btn-success' %>
-<table>
+<table class=" table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,7 +23,7 @@
     <tr>
       <td><%= course.name %></td>
       <td><%= course.subtitle %></td>
-      <td><%= course.price %></td>
+      <td><%= number_to_currency course.price %></td>
       <td><%= course.duration %></td>
       <td><%= link_to course.chapters.count, manage_course_chapters_path(course) %></td>
       <td><%= link_to "Edit", edit_manage_course_path(course) %></td>
@@ -25,3 +31,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @courses, renderer: BootstrapPagination::Rails %>

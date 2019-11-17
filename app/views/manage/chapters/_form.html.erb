@@ -1,4 +1,7 @@
 <%= form_for [:manage, @course, @chapter] do |f| %>
-  <%= f.text_field :title, placeholder: "Title" %> <br />
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>

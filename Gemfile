@@ -65,6 +65,7 @@ gem 'pg'
 gem 'devise', '~> 4.7.1'
 gem 'cancancan', '>= 1.9'
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem "jquery-fileupload-rails"
