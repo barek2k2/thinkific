@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <strong>Welcome </strong><%= current_user.email %>
+  <%= link_to "Manage Courses", manage_courses_path %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign In", new_user_session_path %>
+  <%= link_to "Sign Up", new_user_registration_path %>
+<% end %>

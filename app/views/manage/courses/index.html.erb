@@ -1,0 +1,27 @@
+<h1>Courses</h1>
+
+<%= link_to "New Course", new_manage_course_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Subtitle</th>
+      <th>Price</th>
+      <th>Duration</th>
+      <th>Chapters</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.name %></td>
+      <td><%= course.subtitle %></td>
+      <td><%= course.price %></td>
+      <td><%= course.duration %></td>
+      <td><%= course.chapters.count %></td>
+      <td><%= link_to "Edit", edit_manage_course_path(course) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

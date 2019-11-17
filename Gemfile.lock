@@ -53,6 +53,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.1)
+    cancancan (2.2.0)
     capybara (3.29.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -220,6 +221,7 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
+    will_paginate (3.1.7)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -229,6 +231,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
+  cancancan (>= 1.9)
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
@@ -249,6 +252,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  will_paginate
 
 RUBY VERSION
    ruby 2.5.5p157
