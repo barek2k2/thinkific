@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: "home#index"
   namespace :manage do
     resources :courses do
-      resources :chapters
+      resources :chapters do
+        resources :contents
+      end
     end
   end
 end

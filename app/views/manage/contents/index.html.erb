@@ -1,0 +1,21 @@
+<h1>Contents</h1>
+
+<%= link_to "New content", new_manage_course_chapter_content_path(@course), class: 'btn btn-success' %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Chapter</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contents.each do |content| %>
+    <tr>
+      <td><%= content.title %></td>
+      <td><%= content.chapter.title %></td>
+      <td><%= link_to "Edit", edit_manage_course_chapter_content_path(@course, @chapter, content) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
