@@ -3,7 +3,7 @@ class Manage::CoursesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @courses = @courses.includes(:chapters)
+    @courses = @courses.includes(:chapters).paginate page: params[:page], per_page: 10
   end
 
   def new
