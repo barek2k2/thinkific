@@ -1,0 +1,2 @@
+module Manage::ChaptersHelper
+end

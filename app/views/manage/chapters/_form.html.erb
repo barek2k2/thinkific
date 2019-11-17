@@ -1,0 +1,4 @@
+<%= form_for [:manage, @course, @chapter] do |f| %>
+  <%= f.text_field :title, placeholder: "Title" %> <br />
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Chapters</h1>
+
+<%= link_to "New chapter", new_manage_course_chapter_path(@course), class: 'btn btn-success' %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contents</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @chapters.each do |chapter| %>
+    <tr>
+      <td><%= chapter.title %></td>
+      <td><%= chapter.contents.count %></td>
+      <td><%= link_to "Edit", edit_manage_course_chapter_path(@course, chapter) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
