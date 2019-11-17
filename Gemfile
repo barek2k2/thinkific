@@ -68,4 +68,4 @@ gem 'will_paginate'
 gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem "jquery-fileupload-rails"
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
