@@ -11,8 +11,11 @@
     <div id="content">
       <div class="container">
         <%= render partial: "layouts/shared/auth" %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <% if (notice || alert).present? %>
+          <div class="alert alert-success">
+            <%= notice %><%= alert %>
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     </div>
