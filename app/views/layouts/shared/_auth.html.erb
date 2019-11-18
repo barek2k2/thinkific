@@ -1,8 +1,36 @@
-<% if user_signed_in? %>
-  <strong>Welcome </strong><%= current_user.email %>
-  <%= link_to "Manage Courses", manage_courses_path %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign In", new_user_session_path %>
-  <%= link_to "Sign Up", new_user_registration_path %>
-<% end %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "#" do %>
+              <strong>Welcome </strong> <%=  current_user.email %>
+            <% end %>
+          </li>
+        <% end %>
+        <% unless user_signed_in? %>
+          <li><%= link_to "Sign In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to "Manage Courses", manage_courses_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
