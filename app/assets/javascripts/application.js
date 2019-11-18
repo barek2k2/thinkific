@@ -14,6 +14,7 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
+//= require tinymce
 //= require_tree .
 
 addEventListener("direct-upload:initialize", event => {
@@ -51,4 +52,10 @@ addEventListener("direct-upload:end", event => {
   const { id } = event.detail
   const element = document.getElementById(`direct-upload-${id}`)
   element.classList.add("direct-upload--complete")
+})
+
+$(document).ready(function(){
+  tinyMCE.init({
+    selector: 'textarea.tinymce'
+  })
 })

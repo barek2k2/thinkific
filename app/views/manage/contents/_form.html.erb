@@ -10,6 +10,10 @@
     <%= f.collection_select :chapter_id, Chapter.where(course_id: f.object.chapter.course_id), :id, :title, {}, {class: "form-control"} %>
   </div>
   <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control tinymce" %>
+  </div>
+  <div class="form-group">
     <%= f.label :content_type %>
     <%= f.collection_select :content_type, Content.content_types.collect{|ct| [ct.first] } , :first, :first, {}, {class: "form-control"} %>
   </div>
