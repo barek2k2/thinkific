@@ -1,4 +1,6 @@
 <%= form_for [:manage, @course, @chapter, @content] , :html => {:class => '', :multipart => true} do |f| %>
+  <%= render partial: "layouts/shared/errors", locals: {obj: f.object} %>
+
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>
@@ -6,6 +8,10 @@
   <div class="form-group">
     <%= f.label :chapter %>
     <%= f.collection_select :chapter_id, Chapter.where(course_id: f.object.chapter.course_id), :id, :title, {}, {class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content_type %>
+    <%= f.collection_select :content_type, Content.content_types.collect{|ct| [ct.first] } , :first, :first, {}, {class: "form-control"} %>
   </div>
   <div class="form-group">
     <%= f.label :files %>

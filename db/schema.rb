@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_172337) do
 
   create_table "contents", force: :cascade do |t|
     t.string "title", limit: 255
-    t.string "content_type"
+    t.integer "content_type"
     t.text "description"
     t.integer "chapter_id"
     t.datetime "created_at", null: false

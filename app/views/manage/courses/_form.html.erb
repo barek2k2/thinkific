@@ -1,4 +1,6 @@
 <%= form_for [:manage, @course] do |f| %>
+  <%= render partial: "layouts/shared/errors", locals: {obj: f.object} %>
+
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %> 
