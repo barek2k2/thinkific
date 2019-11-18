@@ -70,3 +70,4 @@ gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem "jquery-fileupload-rails"
 gem 'bootstrap-sass', '~> 3.4.1'
+gem 'active_storage_validations'
