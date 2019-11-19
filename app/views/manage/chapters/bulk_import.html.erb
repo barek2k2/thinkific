@@ -9,4 +9,9 @@
 
   <%= f.submit 'Import', class: 'btn btn-primary' %>
   <%= link_to "Cancel", manage_course_chapter_contents_url(@course, @chapter), class: 'btn btn-default' %>
+
+  <div class="form-group">
+    <hr />
+    <%= link_to "Sample valid bulk CSV", "/bulk_multimedia_contents.csv" %>
+  </div>
 <% end %>

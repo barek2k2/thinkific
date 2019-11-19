@@ -46,7 +46,7 @@ RSpec.describe Manage::CoursesController, type: :controller do
     end
   end
 
-  describe "PUT 'edit'" do
+  describe "PUT 'update'" do
     before do
       @course = FactoryBot.create(:course, author: @user)
     end

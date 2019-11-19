@@ -3,7 +3,7 @@
     <h2 class="pull-left">Courses</h2>
   </div>
   <div class="col-md-6">
-    <%= link_to "New Course", new_manage_course_path, class: 'btn btn-success pull-right' %>
+    <%= link_to "New Course", new_manage_course_path, class: 'btn btn-primary pull-right' %>
   </div>
 </div>
 
@@ -26,7 +26,7 @@
       <td><%= number_to_currency course.price %></td>
       <td><%= course.duration %></td>
       <td><%= link_to course.chapters.count, manage_course_chapters_path(course) %></td>
-      <td><%= link_to "Edit", edit_manage_course_path(course) %></td>
+      <td><%= link_to "Edit", edit_manage_course_path(course), class: 'btn btn-success' %></td>
     </tr>
     <% end %>
   </tbody>
