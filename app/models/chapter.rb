@@ -7,6 +7,9 @@ class Chapter < ApplicationRecord
 
   validates :title, presence: true
 
+  scope :desc, -> { order(rank: :desc) }
+  scope :asc, -> { order(rank: :asc) }
+
   def import_contents_from(file)
     CSV.foreach(file.path, :headers => true) do |row|
       content_attributes = row.to_hash

@@ -17,4 +17,7 @@ class Content < ApplicationRecord
             size: { less_than: 200.megabytes , message: 'is large in size' },
             if: Proc.new{|content| content.video? }
 
+  scope :desc, -> { order(rank: :desc) }
+  scope :asc, -> { order(rank: :asc) }
+
 end

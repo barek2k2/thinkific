@@ -6,6 +6,10 @@
     <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :rank %>
+    <%= f.text_field :rank, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :chapter %>
     <%= f.collection_select :chapter_id, Chapter.where(course_id: f.object.chapter.course_id), :id, :title, {}, {class: "form-control"} %>
   </div>

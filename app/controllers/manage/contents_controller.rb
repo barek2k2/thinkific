@@ -5,7 +5,7 @@ class Manage::ContentsController < ApplicationController
   load_and_authorize_resource :content, through: :chapter
 
   def index
-    @contents = @contents.includes(chapter: :course).paginate page: params[:page], per_page: 10
+    @contents = @contents.asc.includes(chapter: :course).paginate page: params[:page], per_page: 10
   end
 
   def new
@@ -41,6 +41,6 @@ class Manage::ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:title, :content_type, :description, :chapter_id, files: [])
+    params.require(:content).permit(:title, :content_type, :description, :chapter_id, :rank, files: [])
   end
 end
