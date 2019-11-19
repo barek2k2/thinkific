@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :chapter do
-    title "MyString"
+    title Faker::Lorem.sentence
   end
 end
