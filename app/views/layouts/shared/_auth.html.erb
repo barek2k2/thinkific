@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <% if user_signed_in? %>
-        <%= link_to "#", class: 'navbar-brand' do %>
+        <%= link_to edit_user_registration_path, class: 'navbar-brand' do %>
           <strong>Welcome </strong> <%=  current_user.email %>
         <% end %>
       <% end %>
