@@ -17,6 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+a.navbar-brand{
+  font-size: 16px;
+}
+
 .direct-upload {
   display: inline-block;
   position: relative;
