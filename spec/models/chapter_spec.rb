@@ -16,7 +16,7 @@ RSpec.describe Chapter, type: :model do
   end
 
   describe "#import_contents_from" do
-    it "should import contents from the csv file" do
+    it "should import multimedia contents from the csv file" do
       chapter = FactoryBot.create(:chapter, course: @course)
       csv_file = File.open("#{Rails.root}/spec/files/bulk_multimedia_contents.csv")
       chapter.import_contents_from(csv_file)
