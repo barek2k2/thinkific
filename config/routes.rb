@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :courses do
       resources :chapters do
         resources :contents
+        member do
+          get :bulk_import
+          post :bulk_import
+        end
       end
     end
   end

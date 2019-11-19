@@ -33,6 +33,17 @@ class Manage::ChaptersController < ApplicationController
     end
   end
 
+  def bulk_import
+    if request.post?
+      if params[:bulk_import].present? && params[:bulk_import][:csv].present?
+        @chapter.import_contents_from(params[:bulk_import][:csv])
+        redirect_to manage_course_chapter_contents_url(@course, @chapter), notice: "Multimedia content(s) were imported successfully."
+      else
+        redirect_to manage_course_chapters_path(@course), alert: "Please choose valid csv to import contents."
+      end
+    end
+  end
+
   private
 
   def chapter_params

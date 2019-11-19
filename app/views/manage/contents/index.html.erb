@@ -6,6 +6,8 @@
     <tr>
       <th>Name</th>
       <th>Chapter</th>
+      <th>Content Type</th>
+      <th>Multimedia(Count)</th>
       <th></th>
     </tr>
   </thead>
@@ -14,7 +16,11 @@
     <tr>
       <td><%= content.title %></td>
       <td><%= content.chapter.title %></td>
-      <td><%= link_to "Edit", edit_manage_course_chapter_content_path(@course, @chapter, content) %></td>
+      <td><%= content.content_type %></td>
+      <td><%= content.files.count %></td>
+      <td>
+        <%= link_to "Edit", edit_manage_course_chapter_content_path(@course, @chapter, content) %>
+      </td>
     </tr>
     <% end %>
   </tbody>

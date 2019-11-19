@@ -11,11 +11,7 @@
     <div id="content">
       <div class="container">
         <%= render partial: "layouts/shared/auth" %>
-        <% if (notice || alert).present? %>
-          <div class="alert alert-success">
-            <%= notice %><%= alert %>
-          </div>
-        <% end %>
+        <%= render partial: "layouts/shared/flash" %>
         <%= yield %>
       </div>
     </div>

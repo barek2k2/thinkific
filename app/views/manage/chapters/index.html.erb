@@ -14,7 +14,10 @@
     <tr>
       <td><%= chapter.title %></td>
       <td><%= link_to chapter.contents.count, manage_course_chapter_contents_path(@course, chapter) %></td>
-      <td><%= link_to "Edit", edit_manage_course_chapter_path(@course, chapter) %></td>
+      <td>
+        <%= link_to "Edit", edit_manage_course_chapter_path(@course, chapter) %>
+        <%= link_to "Bulk Import", bulk_import_manage_course_chapter_path(@course, chapter) %>
+      </td>
     </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,12 @@
+<h2> <%= breadcrumbs %> Bulk Import</h2>
+
+<%= form_for '', url: bulk_import_manage_course_chapter_path(@course, @chapter), html: {method: :post, multipart: true} do |f| %>
+
+  <div class="form-group">
+    <%= f.label :choose_csv %>
+    <%= file_field :bulk_import, :csv %>
+  </div>
+
+  <%= f.submit 'Import', class: 'btn btn-primary' %>
+  <%= link_to "Cancel", manage_course_chapter_contents_url(@course, @chapter), class: 'btn btn-default' %>
+<% end %>

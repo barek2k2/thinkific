@@ -33,6 +33,11 @@ class Manage::ContentsController < ApplicationController
     end
   end
 
+  def destroy
+    @content.destroy
+    redirect_to manage_course_chapter_content_url(@course, @chapter), notice: "Content was deleted."
+  end
+
   private
 
   def content_params
