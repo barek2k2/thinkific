@@ -20,16 +20,6 @@ test:
   password: root
   template: template0
 
-beta:
-  adapter: postgresql
-  encoding: unicode
-  database: TherapyMate_development
-  pool: 5
-  username: abdul
-  password: root
-  template: template0
-  host: localhost
-
 production:
   adapter: postgresql
   encoding: unicode
