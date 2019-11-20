@@ -3,5 +3,6 @@ FactoryBot.define do
     title Faker::Lorem.sentence
     content_type Content.content_types.keys.sample
     description Faker::Lorem.sentences
+    rank 1
   end
 end

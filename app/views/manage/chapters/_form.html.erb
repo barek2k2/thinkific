@@ -6,8 +6,8 @@
     <%= f.text_field :title, maxlength: 255, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :rank %>
-    <%= f.text_field :rank, class: "form-control" %>
+    <%= f.label :rank, 'Order' %>
+    <%= f.number_field :rank, class: "form-control" %>
   </div>
   <%= f.submit class: 'btn btn-primary' %>
   <%= link_to "Cancel", manage_course_chapters_path(@course), class: 'btn btn-default' %>

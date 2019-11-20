@@ -29,6 +29,12 @@ RSpec.describe Manage::CoursesController, type: :controller do
       @course = FactoryBot.build(:course, author: @user)
       params = FactoryBot.attributes_for :course
       post :create, params: {course: params}
+      last_created_course = Course.last
+      expect(@course.name).to eq(last_created_course.name)
+      expect(@course.subtitle).to eq(last_created_course.subtitle)
+      expect(@course.description).to eq(last_created_course.description)
+      expect(@course.price).to eq(last_created_course.price)
+      expect(@course.duration).to eq(last_created_course.duration)
       expect(response).to redirect_to(manage_courses_url)
       expect(flash[:notice]).to eq("Your course was created successfully.")
     end

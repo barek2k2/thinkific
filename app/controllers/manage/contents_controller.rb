@@ -27,15 +27,10 @@ class Manage::ContentsController < ApplicationController
 
   def update
     if @content.update(content_params)
-      redirect_to manage_course_chapter_contents_path(@course, @chapter), notice: "your content was updated successfully."
+      redirect_to manage_course_chapter_contents_path(@course, @chapter), notice: "Your content was updated successfully."
     else
       render "edit"
     end
-  end
-
-  def destroy
-    @content.destroy
-    redirect_to manage_course_chapter_content_url(@course, @chapter), notice: "Content was deleted."
   end
 
   private
