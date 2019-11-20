@@ -2,7 +2,7 @@
 
 * `ruby 2.5.5 or higher`
 * `nodejs v0.12.7 or higher`
-* Please make sure your database configure at `config/database.yml` accordingly.
+* Please make sure your database configuration is setup at `config/database.yml` properly.
 
 # How to set up locally
  * Run these commands
