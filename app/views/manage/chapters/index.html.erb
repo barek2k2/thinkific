@@ -6,6 +6,7 @@
     <tr>
       <th>Name</th>
       <th>Contents</th>
+      <th>Order</th>
       <th></th>
     </tr>
   </thead>
@@ -15,7 +16,11 @@
       <td><%= chapter.title %></td>
       <td><%= link_to chapter.contents.count, manage_course_chapter_contents_path(@course, chapter) %></td>
       <td>
+        <%= chapter.rank %>
+      </td>
+      <td>
         <%= link_to "Edit", edit_manage_course_chapter_path(@course, chapter), class: 'btn btn-success' %>
+        <%= link_to "Add Content", new_manage_course_chapter_content_path(@course, chapter), class: 'btn btn-success' %>
         <%= link_to "Bulk Import", bulk_import_manage_course_chapter_path(@course, chapter), class: 'btn btn-success' %>
       </td>
     </tr>

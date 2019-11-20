@@ -26,7 +26,10 @@
       <td><%= number_to_currency course.price %></td>
       <td><%= course.duration %></td>
       <td><%= link_to course.chapters.count, manage_course_chapters_path(course) %></td>
-      <td><%= link_to "Edit", edit_manage_course_path(course), class: 'btn btn-success' %></td>
+      <td>
+        <%= link_to "Edit", edit_manage_course_path(course), class: 'btn btn-success' %>
+        <%= link_to "Add Chapter", new_manage_course_chapter_path(course), class: 'btn btn-success' %>
+      </td>
     </tr>
     <% end %>
   </tbody>

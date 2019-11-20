@@ -8,6 +8,7 @@
       <th>Chapter</th>
       <th>Content Type</th>
       <th>Multimedia(attached)</th>
+      <th>Order</th>
       <th></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
       <td><%= content.chapter.title %></td>
       <td><%= content.content_type %></td>
       <td><%= content.files.count %></td>
+      <td><%= content.rank %></td>
       <td>
         <%= link_to "Edit", edit_manage_course_chapter_content_path(@course, @chapter, content), class: 'btn btn-success' %>
       </td>
