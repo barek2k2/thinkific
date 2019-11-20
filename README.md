@@ -1,24 +1,48 @@
-# README
+# Prerequisite 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* `ruby 2.5.5 or higher`
+* `nodejs v0.12.7 or higher`
+* Please make sure your database configure at `config/database.yml` accordingly.
 
-Things you may want to cover:
+# How to set up locally
+ * Run these commands
+ ```
+ git clone git@github.com:barek2k2/thinkific.git
+ bundle install
+ rake db:create RAILS_ENV=development
+ rake db:migrate RAILS_ENV=development
+ rake db:seed RAILS_ENV=development
+ rails s -p 3000
+ ```
+ * Your Rails app will be viewable on http://localhost:3000/
+ * A test user will be created upon running the seed with 
+ email `barek2k2@gmail.com` and password `123456`
 
-* Ruby version
+# How to run test cases
+```
+rake db:create RAILS_ENV=test
+rake db:schema:load RAILS_ENV=test
+rspec
+```
 
-* System dependencies
+# Live demo
+https://fierce-escarpment-82937.herokuapp.com/
 
-* Configuration
+# Already tested and developed into this environment
+* Ruby 2.5.5
+* Rails 5.2.3
+* Ubuntu 18.04.2 LTS
+* Rubymine IDE 2017.1.6
+* PostgreSQL 10.10
+* nodejs 0.12.7
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Notes
+ * Right now Active storage uses local disc for file upload, Heroku live demo may not work for file upload/download.
+ However AWS S3 can easily be integrated to store files on cloud via Active Storage.
+ * Running tests may be slow because bulk import will import multimedia from online.
+  
+#### What to consider to make the app more faster
+  * By setting up either one of background jobs (sidekiq, resque, que, DelayedJob, etc)
+  
+###### Any question/concern ? :-)
+  * barek2k2@gmail.com
